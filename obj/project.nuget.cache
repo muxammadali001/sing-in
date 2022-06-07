@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b6Ih2JK9CAZrZmZbL6qDjBsNZ7/vYOiDkIDvwYjTEBJoYiwKb971C8M2GzELwoa6X2Kdzt046CrdkU9caMEAaw==",
+  "dgSpecHash": "NCNunzOqgiU953yc1s/MapgLV6aRdogiTcE/m01VBzF9QDyNM5HgWnJJ6seypGeT0OLjGhot3g5nZXJLuFnPkA==",
   "success": true,
-  "projectFilePath": "/Users/mac/Desktop/proj/register/register.csproj",
+  "projectFilePath": "/Users/mac/Desktop/sing-in/register.csproj",
   "expectedPackageFiles": [
     "/Users/mac/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "/Users/mac/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mac/Desktop/proj/register/register.csproj": {}
+    "/Users/mac/Desktop/sing-in/register.csproj": {}
   },
   "projects": {
-    "/Users/mac/Desktop/proj/register/register.csproj": {
+    "/Users/mac/Desktop/sing-in/register.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/Desktop/proj/register/register.csproj",
+        "projectUniqueName": "/Users/mac/Desktop/sing-in/register.csproj",
         "projectName": "register",
-        "projectPath": "/Users/mac/Desktop/proj/register/register.csproj",
+        "projectPath": "/Users/mac/Desktop/sing-in/register.csproj",
         "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/Desktop/proj/register/obj/",
+        "outputPath": "/Users/mac/Desktop/sing-in/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mac/.nuget/NuGet/NuGet.Config"
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
         }
       }
     }
