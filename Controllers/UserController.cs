@@ -1,44 +1,72 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text.Json;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using webapp.Entity;
+using webapp.ViewModels;
 
-namespace webapp.Controller;
-public class UserController:Controller
+namespace webapp.Controllers;
+
+public class AccountController : Controller
 {
-    private readonly UserManager<User> _userManager;
-    private readonly SignInManager<User> _signInManager;
-    private readonly IEmailSender _emailSender;
-    private readonly ILogger<UserController> _logger;
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Register(RegisterViewModel model)
+    private readonly UserManager<User> _userM;
+    private readonly SignInManager<User> _signInM;
+    private readonly ILogger<AccountController> _logger;
+
+    public AccountController(
+        UserManager<User> userManager,
+        SignInManager<User> signInManager,
+        ILogger<AccountController> logger)
     {
-        if (ModelState.IsValid)
-        {
-            var user = new User { UserName = model.Email, Email = model.Email, Fullname = model.Fullname, Birthdate = model.Birthdate };
-            var result = await _userManager.CreateAsync(user, model.Password);
-            if (result.Succeeded)
-            {
-                _logger.LogInformation("User created a new account with password.");
-                var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
-                await _emailSender.SendEmailConfirmationAsync(model.Email, callbackUrl);
-                await _signInManager.SignInAsync(user, isPersistent: false);
-                _logger.LogInformation("User created a new account with password.");
-                return RedirectToAction("Index", "Home");
-            }
-            AddErrors(result);
-        }
-        return View(model);
+        _userM = userManager;
+        _signInM = signInManager;
+        _logger = logger;
     }
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Logout()
+
+    [HttpGet("signup")]
+    public IActionResult Signup(string returnUrl)
     {
-        await _
-{
+        return View(new SignupViewModel() { ReturnUrl = returnUrl ?? string.Empty });
+    }
 
+    [HttpPost("signup")]
+    public async Task<IActionResult> Signup(SignupViewModel model)
+    {
+        var user = new User()
+        {
+            Fullname = model.Fullname,
+            Email = model.Email,
+            UserName = model.Username,
+            Birthdate = model.Birthdate,
+            PhoneNumber = model.Phone,
+        };
+
+        var result = await _userM.CreateAsync(user, model.Password);
+
+        if (result.Succeeded)
+        {
+            return LocalRedirect($"/Login?returnUrl={model.ReturnUrl}");
+        }
+
+        return BadRequest(JsonSerializer.Serialize(result.Errors));
+    }
+
+    [HttpGet("Login")]
+    public IActionResult Login(string returnUrl)
+    {
+        return View(new LoginViewModel() { ReturnUrl = returnUrl ?? string.Empty });
+    }
+
+    [HttpPost("Login")]
+    public async Task<IActionResult> Login(LoginViewModel model)
+    {
+        var user = await _userM.FindByEmailAsync(model.Email);
+        if (user != null)
+        {
+            await _signInM.PasswordSignInAsync(user, model.Password, false, false); // isPersistant
+
+            return LocalRedirect($"{model.ReturnUrl ?? "/"}");
+        }
+
+        return BadRequest("Wrong credentials");
+    }
 }
-
-    
