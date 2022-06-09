@@ -16298,13 +16298,33 @@
   "RootNamespace": "register",
   "Documents": [
     {
+      "FilePath": "/Users/mac/Desktop/sing-in/Views/Home/Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/mac/Desktop/sing-in/Views/Acoount/Login.cshtml",
       "TargetPath": "Views\\Acoount\\Login.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/mac/Desktop/sing-in/Views/Home/Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/mac/Desktop/sing-in/Views/Shared/Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/mac/Desktop/sing-in/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/mac/Desktop/sing-in/Views/Acoount/Singup.cshtml",
+      "TargetPath": "Views\\Acoount\\Singup.cshtml",
       "FileKind": "mvc"
     },
     {
