@@ -16296,6 +16296,22 @@
     "CSharpLanguageVersion": 1000
   },
   "RootNamespace": "register",
-  "Documents": [],
+  "Documents": [
+    {
+      "FilePath": "/Users/mac/Desktop/sing-in/Views/Acoount/Login.cshtml",
+      "TargetPath": "Views\\Acoount\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/mac/Desktop/sing-in/Views/_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/mac/Desktop/sing-in/Views/_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    }
+  ],
   "SerializationFormat": "0.2"
 }
